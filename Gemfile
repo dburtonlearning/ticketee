@@ -18,6 +18,7 @@ end
 
 gem 'dynamic_form'
 gem 'jquery-rails'
+gem 'devise'
 
 group :test, :development do
   gem 'rspec-rails'
