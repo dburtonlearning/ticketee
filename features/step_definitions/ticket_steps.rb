@@ -4,3 +4,10 @@ Given /^that project has a ticket:$/ do |table|
   end
 end
 
+Given /^"([^"]*)" has created a ticket:$/ do |email, table|
+  table.hashes.each do |attributes|
+    attributes = attributes.merge!(:user => User.find_by_email!(email))
+    @project.tickets.create!(attributes)
+  end
+end
+
