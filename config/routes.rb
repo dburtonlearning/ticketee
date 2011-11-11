@@ -4,8 +4,12 @@ Ticketee::Application.routes.draw do
     root :to => "base#index"
     resources :users
   end
+  
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
-  devise_for :users
+  get '/awaiting_confirmation',
+    :to => "users#confirmation",
+    :as => 'confirm_user'
 
   root :to => "projects#index"
   resources :projects do
