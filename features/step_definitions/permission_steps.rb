@@ -1,8 +1,12 @@
+#And "user@ticketee.com" can edit tickets in the "TextMate 2"" project
 permission_step =/^"([^"]*)" can ([^"]*?) ([o|i]n)?\s?the "([^"]*)" project$/
 
 Given permission_step do |user, permission, on, project|
   create_permission(user, find_project(project), permission)
 end
+#Given permission_step do |user, permission, on, project|
+#  create_permission(user, find_project(project), permission)
+#end
 
 def create_permission(email, object, action)
   Permission.create!( :user => User.find_by_email(email),
