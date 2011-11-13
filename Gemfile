@@ -20,6 +20,7 @@ gem 'dynamic_form'
 gem 'jquery-rails'
 gem 'devise'
 gem 'cancan'
+gem 'paperclip'
 
 group :test, :development do
   gem 'rspec-rails'
